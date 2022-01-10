@@ -1,0 +1,12 @@
+app.get("/movie", (request, response) => {
+  console.log(request.query)
+  const { language }=request.query;
+  const {rating}=request.query;
+  if(language&&rating)
+  const movie=movies.filter((mv)=>(mv.language===language && mv.rating==rating))
+  if(language && rating==null)
+  const movie=movies.filter((mv)=>mv.language===language)
+  if(language=null&&rating)
+  const movie=movies.filter((mv)=> mv.rating==rating)
+ response.send(movie)
+})
